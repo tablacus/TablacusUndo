@@ -11,7 +11,7 @@ uses
 const
   CommandID_UNDO = 28700;
   WM_GETISHELLBROWSER = WM_USER + 7;
-  FWF_NOWEBVIEW       = $00010000;
+  FWF_NOWEBVIEW = $00010000;
 
 type
   TForm1 = class(TForm, IShellBrowser)
@@ -235,7 +235,7 @@ begin
       begin
         R := Rect(-2, -2, -1, -1);
         fs.ViewMode := FVM_LIST;
-        fs.fFlags := FWF_NOWEBVIEW or FWF_NOICONS or FWF_NOSUBFOLDERS;
+        fs.fFlags := FWF_NOWEBVIEW;
         if Failed(FShellView.CreateViewWindow(nil, fs, Self as IShellBrowser, R, hExplorer)) then
         begin
           FShellView := nil;
